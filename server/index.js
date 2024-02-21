@@ -15,6 +15,7 @@ app.use(cors({
 	origin: "*",
 	credentials: true
 }));
+app.use(cors());
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
@@ -48,8 +49,15 @@ app.get("/", (req, res) => {
 		message:'Your server is up and running....'
 	});
 });
+app.get("/my",(req,res)=>{
+	return res.json({
+		success:true,
+		message:'Your server is up and running....',
+		data:"sorry "
+	});
+})
 
 app.listen(PORT, () => {
-	console.log(`App is running at ${PORT}`)
+	console.log(`App it is  is running at ${PORT}`)
 })
 

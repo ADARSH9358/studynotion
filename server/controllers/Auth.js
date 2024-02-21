@@ -18,6 +18,7 @@ const signUp = async (req, res) => {
                 return res.status(403).json({
                     success:false,
                     message:"All fields are required",
+                    firstName, lastName, email, password, confirmPassword, accountType, contactNumber, otp
                 })
            }
         if(password !== confirmPassword){                                            //both password must be matched 
